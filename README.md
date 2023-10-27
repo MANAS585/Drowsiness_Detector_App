@@ -17,4 +17,4 @@ The requirement for this Python project is a webcam through which we will captur
 2. Imutils – pip install imutils (To get landmarks of eye).
 3. Scipy – pip install scipy (To calculate distance between eye landmarks).
 4. Pygame – pip install pygame (To play alarm sound).
-5.      Dlib - pip install dlib
+5. Dlib - pip install dlib
