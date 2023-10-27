@@ -10,7 +10,7 @@ def eye_aspect_ratio(eye):
 	A = distance.euclidean(eye[1], eye[5])
 	B = distance.euclidean(eye[2], eye[4])
 	C = distance.euclidean(eye[0], eye[3])
-	ear = (A+B)/(2*C)
+	ear = (A+B)/(2.0*C)
 	return ear
 thresh=0.25
 frame_check=20
@@ -31,7 +31,7 @@ while True:
 		lefteye=shape[lstart:lend]
 		righteye = shape[rstart:rend]
 		leftEAR=eye_aspect_ratio(lefteye)
-		rightEAR = eye_aspect_ratio(lefteye)
+		rightEAR = eye_aspect_ratio(righteye)
 		ear=(leftEAR+rightEAR)/2.0
 		leftEyeHull=cv2.convexHull(lefteye)
 		rightEyeHull = cv2.convexHull(righteye)
@@ -44,12 +44,13 @@ while True:
 				cv2.putText(frame,"********************Alert*******************",(10,30),cv2.FONT_HERSHEY_SIMPLEX,0.7,(0,0,255),2)
 				cv2.putText(frame, "********************Alert*******************", (10, 325), cv2.FONT_HERSHEY_SIMPLEX,0.7, (0, 0, 255), 2)
 				mixer.music.play()
-			else:
-				flag=0
-		cv2.imshow("Frame",frame)
-		key=cv2.waitKey(1)&0xFF
-		if key==ord("q"):
-			break
+		else:
+			print(ear)
+			flag=0
+	cv2.imshow("Frame",frame)
+	key=cv2.waitKey(1)&0xFF
+	if key==ord("q"):
+		break
 cv2.destroyAllWindows()
 cap.release()
 
