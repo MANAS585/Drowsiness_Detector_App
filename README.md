@@ -10,8 +10,10 @@ OpenCV is used for face detection to locate and track the driver's face within t
 Sum of horizontal and vertical Euclidean distance is calculated,then EAR(Eye Aspect Ratio) is calculated.If EAR is less then threshould value then we alert the driver.
 6. Alerting Mechanism:
 When drowsiness is detected, an alert is issued to the driver to wake them up or prompt them to take a break. Alerts can also be in the form of visual warnings, or haptic feedback (vibrations in the steering wheel or seat).In this project we have used sound.
-Benefits:
+7. Benefits:
 This project aims to improve road safety by reducing accidents caused by drowsy driving, potentially saving lives and reducing injuries.
+
+
 The requirement for this Python project is a webcam through which we will capture images. You need to have Python (3.6 version recommended) installed on your system, then using pip, you can install the necessary packages.
 1. OpenCV – pip install opencv-python (Face and eye detection).
 2. Imutils – pip install imutils (To get landmarks of eye).
